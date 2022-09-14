@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import Foot from './components/foot';
+import Head from './components/head';
+import StartGameScreen from './screens/startGame';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
+
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Head title='Adivina el numero' />
+      <ScrollView>
+        <StartGameScreen />
+      </ScrollView>
+      <Foot></Foot>
+    </View>
+  );
+}
+
+
+
